@@ -27,7 +27,7 @@ def speak(text):
 
 # Introduction Function
 
-def introduction(sample_text = "Hi"):
+def introduction(sample_text = "hello"):
     speak(f"{sample_text} Jaswanth , How is your Day")
     speak("How may I Help You")
 
@@ -35,19 +35,20 @@ def introduction(sample_text = "Hi"):
 
 def weather():
     driver = webdriver.Edge()
-    driver.get("https://www.msn.com/en-in/weather/forecast/")
+    driver.get("https://www.accuweather.com/en/in/durg/187467/weather-forecast/187467")   # Weather needs to Improve in Location
+    time.sleep(5)
     temp_element = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located(
-            (By.CSS_SELECTOR, 'a[title][href*="temperature"]')
+            (By.CLASS_NAME, 'temp')
         )
     )
     sky_element = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located(
-            (By.CSS_SELECTOR,'div[class*="summaryCaptionCompact"]')
+            (By.CLASS_NAME,'phrase')
         )
     )
     sky = sky_element.text
-    temperature = temp_element.get_attribute("title")
+    temperature = temp_element.text
     driver.quit()
     temp_res = int(temperature[0:2])
     speak(f"Jaswanth , Temperature is {temp_res} degree celsius")
@@ -166,7 +167,7 @@ def main():
             text = text.lower()
         result = text.split()
         if (len(result) == 2):
-            if (result[0] == "hi" and result[1] == "jarvis"):
+            if (result[0] == "hello" and result[1] == "jarvis"):
                 introduction()
             elif ("date" in result):
                 tell_date()

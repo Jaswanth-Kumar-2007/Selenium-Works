@@ -3,7 +3,7 @@
 ```bash
 Commands - 
 
-1 . Jarvis Hi (Introduction)
+1 . Hello Jarvis  (Introduction)
 
 2 . Jarvis Open Youtube and Open [text] (Youtube)
 
