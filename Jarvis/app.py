@@ -94,7 +94,7 @@ def youtube(text):
 
     speak("Video Opened Succesfully")
 
-    time.sleep(50)
+    time.sleep(40)
 
     speak("Jarvis Executed")
 
@@ -137,7 +137,7 @@ def news_reader():
 
     news_highlights = WebDriverWait(driver, 10).until(
         EC.presence_of_all_elements_located(
-            (By.CSS_SELECTOR, 'a.svxzne[href*="stories"]')
+            (By.CSS_SELECTOR, 'a.svxzne[href*="stories"]')  #(By.CSS_SELECTOR, 'a[href*="./articles"]') It will Work
         )
     )
     for news in news_highlights:

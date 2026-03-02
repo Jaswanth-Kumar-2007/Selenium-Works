@@ -15,7 +15,7 @@ Commands -
 
 6. Jarvis Open [Website-name] (Open_Website)
 
-7. Jarvsi what the news (News_Reader)
+7. Jarvis what the news (News_Reader)
 
 8. Jarvis exit
 ```
